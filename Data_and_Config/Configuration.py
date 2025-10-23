@@ -6,6 +6,7 @@ URL_BASE = "http://testovani.kitner.cz"
 URL_COURSES = f"{URL_BASE}/courses"
 URL_HOME = f"{URL_BASE}/home"
 URL_FORGOT_PASSWORD = f"{URL_BASE}/forgot-password"
+URL_REGKURZ_FORM = f"{URL_BASE}/regkurz/formsave.php"
 
 PORT = 80
 
