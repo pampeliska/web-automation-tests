@@ -1,3 +1,8 @@
+"""
+Some E2E tests for course registration
+
+"""
+
 import pytest
 from faker import Faker
 from playwright.sync_api import expect
@@ -216,9 +221,9 @@ def test_registration_invalid_email_format(page, _setup_and_teardown_login):
     page.fill(LOCATOR_PASSWORD_AGAIN_INPUT, password)
     page.click(LOCATOR_REGISTER_BUTTON)
 
-    # Ověření validace pole - JavaScript funkce přes Python Playwright
-    # u HTML5 validace e-mailového pole prohlížeče - systémový element vykreslovaný nad stránkou
-    # a není součástí DOMu stránky
+    # Verification of field validation - JavaScript function via Python Playwright
+    # for HTML5 validation of browser email field - system element rendered above the page
+    # and is not part of the page's DOM
     validation_message = page.locator(LOCATOR_EMAIL_INPUT).evaluate("e => e.validationMessage")
     # assert only on part of the text
     assert ERROR_EMAIL_MISSING_AT in validation_message

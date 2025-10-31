@@ -1,4 +1,7 @@
-# some examples of API communication - course registration tests
+"""
+Some examples of API JSON tests for course registration form
+
+"""
 
 import pytest
 from playwright.sync_api import sync_playwright
@@ -79,7 +82,6 @@ def test_registration_without_phone(api_context):
         "souhlas": True
     }
     api_communication(api_context, payload, 500)
-
 
 
 # ❌ NEGATIVE TEST - invalid phone number (too long)
